@@ -28,5 +28,5 @@ raw_chant = (first_name + "!" + " ") * len(first_name)
 chant = raw_chant.strip()
 print(chant)
 
-good_chant = chant.endswith(" ")
+good_chant = not chant.endswith(" ")
 print(good_chant)
