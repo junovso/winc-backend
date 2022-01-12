@@ -4,13 +4,13 @@ __human_name__ = 'conditions'
 
 # Add your code after this line
 
-def farm_action(weather, time, milkingStatus, cowLocation, season, slurryTank, grassStatus):
-    if weather == "sunny" and time == "day" and milkingStatus == True and cowLocation == "pasture" and season == "spring" and slurryTank == False and grassStatus == True:
-        return ('take cows to cowshed\nmow grass\ntake cows back to pasture')
-    # elif slurryTank == True and cowLocation == "cowshed" and weather != "sunny" and weather != "windy":
-    #      return ("fertilize pasture/nmilk cows")
-    # elif weather == "sunny" and time == "day" and milkingStatus == True and cowLocation == "pasture" and season == "spring" and slurryTank == False and grassStatus == True:
-    #     return ('take cows to cowshed\nmow grass\ntake cows back to pasture')
+def farm_action(weather, time, milkingStatus, cowLocation, season, slurryTank, grassStatus): 
+    if milkingStatus == True and cowLocation == "pasture":
+        return ("take cows to cowshed\nmilk cows\ntake cows back to pasture")
+    elif grassStatus == True and  season == "spring" and weather == "sunny" and cowLocation == "pasture":
+        return ("take cows to cowshed\nmow grass\ntake cows back to pasture")
+    elif cowLocation == "pasture" and slurryTank == True:
+        return ("take cows to the cowshed\n fertilize pasture\n take cows back to pasture")
     elif cowLocation == "pasture" and time == "night" and weather == "rain":
         return ("take cows to cowshed")
     elif milkingStatus == True and cowLocation == "cowshed":
@@ -19,6 +19,6 @@ def farm_action(weather, time, milkingStatus, cowLocation, season, slurryTank, g
          return ("fertilize pasture")
     elif grassStatus == True and  season == "spring" and weather == "sunny":
         return ("mow grass")
-    else: ("wait")
+    else: return("wait")
  
-print(farm_action("sunny", "day", True, "pasture", "spring", False, True))
+print(farm_action("rainy", "night", False, "cowshed", "winter", False, True))
