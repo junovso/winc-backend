@@ -10,17 +10,17 @@ def main():
 
 def insert_test_data():
     queries = (
-        'INSERT INTO "main"."user" ("name", "address", "zipcode", "city", "state", "country", "billing_name", "billing_account", "username", "password") VALUES("Juno", "teststraat 17", "1111XX", "Venlo", "", "Netherlands", "J.J.H van Som", "298484327", "junovso", "wachtwoord");',
+        'INSERT INTO "main"."user" ("name", "address", "zipcode", "city", "state", "country", "billing_name", "billing_account", "username", "password") VALUES("Juno", "teststraat 17", "1111XX", "Venlo", "Limburg", "Netherlands", "JJH van Som", "junovso", "junovso", "wachtwoord");',
         'INSERT INTO "main"."product" ("name", "description", "price_per_unit", "quantity_in_stock") VALUES("Apple", "Golden Apple", "1.50", "10");',
         'INSERT INTO "main"."product" ("name", "description", "price_per_unit", "quantity_in_stock") VALUES("Pear", "Green Pear", "1.00", "3");',
-        'INSERT INTO "main"."tag" ("name") VALUES("Apple");',
         'INSERT INTO "main"."tag" ("name") VALUES("Pear");',
         'INSERT INTO "main"."tag" ("name") VALUES("Green Pear");',
-        'INSERT INTO "main"."producttag" ("product_id", "tag_id") VALUES("Apple", "Golden Apple");',
+        'INSERT INTO "main"."tag" ("name") VALUES("Nice Pear");',
+        'INSERT INTO "main"."producttag" ("product_id", "tag_id") VALUES("Pear", "Pear");',
         'INSERT INTO "main"."producttag" ("product_id", "tag_id") VALUES("Pear", "Green Pear");',
-        'INSERT INTO "main"."producttag" ("product_id", "tag_id") VALUES("Strawberry", "Red Strawberry");',
-        'INSERT INTO "main"."userproduct" ("user_id", "product_id") VALUES("juno", "Apple");',
-        'INSERT INTO "main"."userproduct" ("user_id", "product_id") VALUES("juno", "Pear");'
+        'INSERT INTO "main"."producttag" ("product_id", "tag_id") VALUES("Pear", "Nice Pear");',
+        'INSERT INTO "main"."userproduct" ("user_id", "product_id") VALUES("Juno", "Pear");',
+        'INSERT INTO "main"."userproduct" ("user_id", "product_id") VALUES("Juno", "Apple");'
     )
     for q in queries:
         # print('test data query: ', q)

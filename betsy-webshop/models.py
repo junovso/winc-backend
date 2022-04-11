@@ -1,7 +1,7 @@
 from peewee import *
 import datetime
 
-# db = peewee.SqliteDatabase(':memory:')
+
 db = SqliteDatabase('db.sqlite3', pragmas={'foreign_keys': 1})
 
 
